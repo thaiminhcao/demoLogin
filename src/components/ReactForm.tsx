@@ -38,6 +38,7 @@ export default function ReactForm() {
         try {
             await onSubmit(data);
             setIsError(false);
+
         } catch (error) {
             setIsError(true);
         }
@@ -219,8 +220,6 @@ export default function ReactForm() {
                     />
                 </FormControl>
 
-
-
                 <Link href={'/forgot-password'} className='absolute right-16 top-96'>{data.forgotPassword}</Link>
 
                 <button
@@ -233,10 +232,14 @@ export default function ReactForm() {
                     (errors.password || errors.email) && (
                         toast.error(
                             data.emptyErr,
-                            { autoClose: 2000, position: "top-right" },
-                        )
+                            {
+                                toastId: "",
+                                autoClose: 1000,
+                                position: "top-right",
+                            })
                     )
                 }
+
                 <ToastContainer />
             </form>
 
