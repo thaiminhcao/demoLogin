@@ -1,0 +1,1 @@
+import Naviagte from './page';
